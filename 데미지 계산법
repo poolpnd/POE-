@@ -1,0 +1,484 @@
+혹시라도 보시는 분들에게 아래 공식들은 POB 에서 다 알아서 전환해주기 때문에 이거 안보셔도 되십니다.
+
+
+
+1. critical 관련 : https://pathofexile.gamepedia.com/Critical_strike
+
+
+
+* + to 크찬 = +#% to Critical Strike Chance
+
+*  inc 크찬 =  #% increased Critical Strike Chance.
+
+
+
+@ 기본 공식 :  (기본크리 + to 크찬)*(1 + inc 크찬) 
+
+
+ex) 기본 5% //  + to 크리 1%  // inc 크찬 50%
+
+=> ( 5 + 1 ) * (1 + 0.5 )  = 6 * 1.5  =  9 %
+
+
+
+포인트 : 기본크리가 낮다 - inc 를 높이기보다 to크찬을 올리는게 더 효율이 높음.
+
+기본 5% 일때 + to 크찬 없고 inc 100% 경우 최종 크리 10% 
+
+기본 5% 일때 + to 크찬 1% 올릴경우  inc 50% 여도 최종 크리 9% ( inc 50% 를 끌어오는 것보다 효율이 높다 생각)
+
+
+
+크리뎀지 - 크멀 -  Critical strike multiplier * 베이스 150% 는 모든 캐릭 공통
+
+
+뎀지*(베이스150%+ inc 크멀 )
+
+
+ex) 뎀지 100  
+inc 크멀이 없을 경우 : 100*1.5 = 150
+inc 크멀이 100일 경우 : 100 * (1.5 + 1 ) = 100 * 2.5 = 250
+
+
+
+크멀은 통합이 아닌 개별로 적용 
+물뎀 100 & 콜뎀 10 있을경우 크멀이 총 250% 면
+
+
+
+물뎀 250 & 콜뎀 25 
+
+
+
+포인트 : 110 * 250% 로 합쳐도 수치는 똑같은 추후 컨버트가 적용되는 경우 수치가 변동될수 있음 컨버트는 하단에 기재)
+
+
+
+2. cast speed :  https://pathofexile.gamepedia.com/Cast_speed
+
+
+캐스트 스피드 - cast speed - c/s
+
+기본공식 : (스펠 베이스 cast time) / (1 + %inc) . <- 수학잼병이라 공대생이 쉽게 바꿔준 공식.
+
+
+ex) 스톰브랜드 - 0.65  cast time
+
+inc c/s 50% 적용시 ->  0.65 / (1 + 0.5)  - > 0.43  cast time
+
+
+
+포인트 : aoe 중 스톰브랜드는 몹에 부착되어 공격. c/s 가 높을수록 부착시간동안 많은 딜을 꼽아넣기때문에 이롭다.
+
+토템은 캐릭의 c/s 에 영향받지 않는다 ? -> 토템 스펠류 확인때 다시 기재.
+
+
+3. 컨버젼 : https://pathofexile.gamepedia.com/Damage_conversion
+
+
+damage conversion - 컨버전 (변환)
+
+정해진 변환 순서 : 물리 -> 라이트닝 -> 콜드 -> 파이어 -> 카오스
+-> 순으로 // 역순으로는 불가능
+
+
+ex) 활 - 물뎀 100
+
+(* 물뎀 - 물리데미지 / 파뎀 - 파이어데미지 / 라뎀 - 라이트닝데미지 / 콜뎀 - 콜드데미지 / 카뎀 - 카오스데미지 )
+
+
+
+* #% of [Damage Type] Converted to [Damage Type]  ex -> 50% of Physical Damage converted to Fire Damage
+
+직역 하면  : 50% 물뎀을 to 파뎀
+
+
+
+적용 공식 1)
+
+
+
+장비1 - 50% 물뎀을 to 파뎀 
+장비2 - 50% 물뎀을 to 콜뎀
+스킬잼 - 50% 물뎀을 to 라뎀
+
+
+=> 스킬잼 우선적용 100*0.5 = 50 라뎀
+
+
+그리고 남은 뎀 50 을 장비1,2뎀에서 변환  => 50 * (0.5) =  25% 물뎀을 to 파뎀 & 콜뎀
+
+
+
+최종 :  라뎀 50 , 콜뎀 25 , 파뎀 25 적용
+총 100뎀. (물뎀은 0이됨)
+
+
+
+gain 과 adds  -> 컨버젼이나 조정없는 추가뎀 :
+
+#% of [Damage Type] Added as [Damage Type] or Gain #% of [Damage Type] as Extra [Damage Type]
+
+
+적용공식 1. 과  조건이 같을경우
+
+25% of Physical Damage Added as Fire Damage. 직역하면  : 물뎀 25% as 파뎀
+
+
+100의 25% 파뎀이 조정없이 추가됨. 
+=> 라뎀50 , 콜뎀 25, 파뎀 25+25  = 총 125 뎀 (물뎀x)
+
+위와같이 파뎀이 25 가 추가가 됨.
+
+포인트 : 컨버전 과 add 가 같이 붙어도 기본 물뎀 100에서 각각 적용 후 합산인것으로 보임.
+
+ 
+Elementa (엘리) 와 Non-chaos as extra (논-카)
+
+= > #% of Elemental Damage as Extra Chaos Damage and #% of Non-Chaos Damage as Extra Chaos Damage
+
+
+엘리-> 라뎀,콜뎀,파뎀 
+논-카 -> 물뎀, 엘리뎀(라콜파)
+
+둘이 다른거임. 엘리는 물뎀이 빠진거 논카는 카뎀 빼고 몽땅.
+
+
+ex) 활 : 100 물뎀  
+
+장비 1 : 50% of Physical Damage converted to Fire Damage -> 50% 물뎀을 to 파뎀
+
+장비 2 : 50% of Physical Damage converted to Cold Damage, -> 50% 물뎀을 to 콜뎀 
+
+장비 3 :  10% of Non-Chaos Damage as Extra Chaos Damage. -> 10% 논-카뎀 as 카뎀
+
+
+
+이경우 파뎀은 50 // 콜뎀 50  이 먼저 적용되고
+카뎀은 물뎀 100중 10% = 10 / 파뎀 50 중 10% = 5 / 콜뎀 50 중 10% =  5 
+총 20 카뎀이 + 됨
+따라서 총데미지 50파뎀, 50콜뎀 , 20카뎀
+120 뎀 (물뎀은 0이됨)
+
+
+
+포인트 : 컨번트(변환) 가 적용 후 extra 가 적용.
+
+** Extra 붙는거
+에센스 - hysterai & insanity -> 활통, 링 ,투구
+샤퍼랑 엘더템. & 와쳐주얼에서 랜덤
+(목차는 위키참고) 카뎀이 붙는건 - 엘더무기,엘더 아뮬, 샤퍼무기, 샤퍼셉터에 랜덤 엘레붙음.
+
+커럽된 활통 과 셉터  : quiver or scepter : 임플릿 (고정속성) 으로 커럽시 변환됨. 
+
+
+
+종합 적용 
+데미지 적용순서 (컨버트포함) 이중 gear 가 뭔지 모르겠음. (찾는중)
+EX) 100물뎀(physical) 칼(weapon-swords-melee)
+A, 컨버트 50% 물뎀 to 콜뎀 스킬잼 :  50% of Physical Damage converted to Cold Damage from a skill gem
+B. 컨버트 30% 물뎀 to 파뎀 gear : 30% of Physical Damage converted to Fire Damage from gear
+C. 컨버트 30% 물뎀 to 라뎀 gear : 30% of Physical Damage converted to Lightning Damage from gear
+D. add 30% 물뎀 as 파뎀 서포트잼 : 30% of Physical Damage Added as Fire Damage from a support gem
+E. add 15% 물뎀 as 콜뎀 서포트잼 : 15% of Physical Damage Added as Cold Damage from a support gem
+F. 컨버트 50% 콜뎀 to 파뎀 서포트잼 : 50% of Cold Damage converted to Fire Damage from a support gem
+G. add +30 콜뎀 서포트잼 : Adds 30 Cold Damage from a support gem
+H. 30% more 물뎀 서포트잼 : 30% more Physical Damage from a support gem
+I. 70% more 무기(칼자체) 엘뎀 서포트잼 : 70% more Weapon Elemental Damage from a support gem
+K. 80% inc 물뎀 with 칼 패시브스킬 : 80% increased Physical Damage with Swords from passive skills
+L. 30% inc melee 물뎀 힘스텟& 패시브스킬 : 30% increased Melee Physical Damage from Strength and passive skills
+M. 20% inc 파뎀 패시브스킬 : 20% increased Fire Damage from passive skills
+N. 15% inc 콜뎀 패시브스킬 : 15% increased Cold Damage from passive skills
+
+
+
+* 스킬잼 우선 적용 변환시 초오 % 수치는 100%를 초과하지 않는다. ( 알파벳 J 는 깜빡한거..멍청해)
+
+-> 물뎀의 50% 콜뎀 25% 파뎀, 25% 라뎀 컨버전 -1순위
+
+
+
+1) 콜뎀 수치.
+A+E =65 * F = 32.5 (32.5는 파뎀으로빠짐)
+콜뎀과 물뎀 변동에 영향받음.
+
+
+K+L+N = 125% inc 뎀
+H , I = more 뎀 (30%, 70%)
+
+
+32.5*(1+0.8+0.3+0.15)*1.3 *1.7 = 161.6
+
+여기에 G * F = 15 콜뎀 (이건 콜뎀단독-add 서포트잼이니까)
+따라서 N - inc 뎀 / I - more 뎀 
+15*(1+0.15)*1.7 = 29.3 콜뎀
+
+
+
+포인트 : 물뎀->콜뎀 변환에 스킬잼은 물뎀과 콜뎀에 적용되는 inc,more를 모두 적용받음. 
+단 inc 와 more 는 변환이 끝난 뎀에 적용
+add 뎀은 별도록 작동 - 역시 변환 후 inc,more 적용 후 단독 발생.
+
+
+
+2) 라뎀 수치
+100 중 50 콜뎀빠지고(A) 25 라뎀 (변환완료)
+라뎀 물뎀 변동 영향받음.
+
+
+K+L = 110% inc 뎀
+H, I = more 뎀 (30% 70%)
+25*(1+0.8+0.3)*1.3*1.7 =116.0 라뎀
+
+
+
+3) 파뎀 수치
+100중 50 콜뎀빠지고(A) 25 파뎀 + D(30) = 55 파뎀 (변환완료) 
+파뎀 물뎀 변동 영향.
+
+
+K+L+M = 130% inc 뎀
+H, I = more 뎀 (30% 70%) 
+55*(1+0.8+0.3+0.2)*1.3*1.7 = 279.6 파뎀
+
+
+
+1)번 콜뎀에서 빠진 32.5
+-> 물뎀에서 콜뎀에서 파뎀으로 변환
+(물라콜파 따라서) 
+3가지 모두 변동 영향
+K+L+M+N = 145% inc 뎀
+H , I = more 뎀 (30% 70%) 
+32.5 *(1+0.8+0.3+0.2+0.15)*1.3*1.7 = 176.0 파뎀
+
+
+
+1)번 add콜뎀에서 변환된 15파뎀
+콜뎀 파뎀 변동 영향
+M+N= 35% inc 뎀
+I = more 뎀 (70%) 
+15*(1+0.2+0.15)*1.7 = 34.4 파뎀
+
+
+
+총 29.3(콜뎀) + 161.6 (콜뎀-물리컨버트) +116.0(라뎀-물리컨버트) +279.6(파뎀-물리컨버트) +176.0 (파뎀-콜드,물리컨버트) + 34.4 (파뎀 - 콜뎀 컨버트) 
+=> 총합 - 796.9 뎀
+
+
+
+포인트 -
+
+1. 스킬잼에 데미지가 컨버전(변환)이최우선
+
+2. 모든 공식이 적용되기전 컨버전이 선우선됨
+
+3. 인크는 합 모어는 곱 4. add 서포트잼은 단독 적용 - 단독으로 모든공식이 적용 5. 여러번 컨버트가 될경우 모든 수치변동에 영향을 받음
+
+물 - 라 - 콜 - 파 -> 파뎀이 물뎀-라뎀-콜뎀을 거쳐 최종 컨버트될경우 4가지 속성에 영향을 끼치는 수치에 모두 적용.
+
+
+
+4. 퀘스트 https://pathofexile.gamepedia.com/Passive_skill
+
+
+
+스킬포인트 주는 퀘스트 목록 중 단어 하나씩만 따로 뽑음.  : 채팅창에 /passive 라고 치면 안깬거 쭉나오는듯함.
+
+
+
+스킬퀘 -총포인트  벤딧(2)+22개 = 24개 
+엑1 : dweller , marooned , mariner 총 3개
+엑2 : 벤딧 2개 (몽땅 죽이면 2개 or 한명 살려서 고유버프) 
+엑3 : victario's ,  piety's 총 2개
+엑4 : indomitable 1개
+엑5 : science , kitava's 총 2개
+엑6 : father , puppet , cloven 총 3개
+엑7 : master, queen , kishara's 총 3개
+엑8 : love, terror, gemling 총 3개
+엑9 : sands , ruler 총 2개
+엑10 : vilenta's , end (1개 , 2개) 총 3개
+
+- 리펀드포인트 퀘는 각 엑트마다 1개에 2포인트씩 줌. 총 20포인트
+
+
+
+5. 패시브트리 노드 : https://pathofexile.gamepedia.com/Passive_skill#Jewel_sockets
+
+이건 그냥 빠르게 보려고 ...
+
+
+
+6. 어택 Attack : weapon , unarmed , melee,  bow , ~ect(스페셜어쩌구)
+
+
+
+1) weapon : https://pathofexile.gamepedia.com/Weapon
+베이스 무기에 따라 고유 임플릿이 있음.  (    ) 는 maraketh => 특이 임플릿(무기마다 일부)
+
+
+한손메이스 - 적스턴임계점감소 (inc공속)
+두손메이스 - 적 스턴시간 증가 (area 증가) 
+한손도끼 - x 높은뎀 (inc물뎀)
+두솓도끼 - x 높은뎀 (inc 로칼 크찬)
+한손검 -  inc 명중 or +to 명중 (inc 닷지)
+양손검 -  한손가 돵일 (inc 크멀)
+비도 - inc 크멀 (출혈찬스%)
+활 - inc 크찬 or inc 엘뎀with weapon (inc 이속)
+갈코리 - 어택hit당+피흡 or %리치피흡 (어택hit당+피마나흡)
+단도 - inc글로벌크찬 (%블락찬스)
+셉터 - inc엘뎀 (%레깍-레지깍는거)
+스테프 - %블락찬스 ( inc크멀) 
+완드 - inc스펠뎀 (inc c/s)
+
+
+
+2) unarmed : https://pathofexile.gamepedia.com/Unarmed
+
+melee attack damage 근접 스펠이아닌 공격뎀지.
+(무기를 장착하지 않은) // 빌드에서 거의 안쓰임. 
+facebreaker , doryani's fist (장갑 - 언암드 데미지 증가 유니크) 사용하는 빌드도 있는듯.
+기본공격은 캐릭마다 다르고 베이스 크찬은 0% 
+공격거리 4 (모든 melee 무기보다 낮음) 
+melee 이나 attack 키워드에 들어가나 weapon 에는 포함되지 않음. 
+(shield or quiver 은 장비가능)
+
+
+
+3) melee : https://pathofexile.gamepedia.com/Melee_skill
+
+melee - 흔히 말하는 근접공격으로 보면된다고봄.
+장비한 무기의 기본베이스로 attack함. 
+무기없이 공격하면 base damage 는 unarmed 로 적용됨. 
+* 포인트 - 어택류 스킬에 base damage 는 장착 무기 기준으로 따라간다. weapon damage를 따로 올리는 스킬등은 기재가 되어있음.
+
+
+
+4) bow : https://pathofexile.gamepedia.com/Bows
+
+활 (bow) 활통 (quivers) 씀. - 기본 크찬이 낮음
+wands 보단 빠름
+3개를 제외한 임플릿 모드를 갖고있지않음. 
+inc엘뎀wiht weapon / inc 크찬 / inc 이속
+* inc 이속은 maraketh weapon
+-> maraketh weapon https://pathofexile.gamepedia.com/Maraketh_weapon
+걍 다른 무기랑 임플릿이 다른 종류들임. 
+
+
+
+7. receiving damage :  https://pathofexile.gamepedia.com/Receiving_damage
+
+
+
+몹이든 나든 위 순서에 따라 데미지를 받음.
+(카페에 위내용에 대해 많은 글들이 있음)
+
+
+
+1) Initial damage : 기본데미지 (최초임) : 기본데미지를 증가시키는 요소들이 몽땅 들어감, 한번씩만 적용.
+
+
+
+ Falt damage 
+* 스팰젬,무기등의 기본dmg 
+* added damage to attack or spells (장비나 서포트잼)
+
+
+
+ Damage conversion 
+* dmg 변환임 (큰3번항목) 요약하면
+  - added as (추가뎀지) 
+  - converted to (100%기준으로 몇퍼씩 나눠기)
+두가지가 적용
+
+
+
+ Global modigiers 
+* All inc & reduced : 합연산
+* All more & less : 곱연산 
+->큰3번 보면 변환이 끝난후 이게 또 다 각각들어가기때문에 변환이 먼저임
+
+
+
+ Critical strike roll : 크멀 적용
+
+
+
+결과적으로   플랫(기본)->컨버트->글로벌인크모어->크멀 순서 (이 안에서 소규칙도 순서 그대로 적용 )
+
+
+
+요럿게 데미지가 정해지고
+
+
+
+2) Preventing the hit 
+*evasion of attacks
+
+
+*dodge and spell dodge
+
+
+두개는 다른거임. 이베이젼과 닷지는 따로따로
+
+
+
+3) Blocking the hit 
+* block and spell block  : 무기나 스펠 막는 확률
+
+
+
+4) Damage shift 
+#% of X Damage taken as Y 
+ex) #30% 물뎀을 taken as 파뎀이라 했을때 100 물뎀 => 물뎀 70 파뎀 30 으로 변화해서받음
+
+
+* 중요 : 이건 변환(conversion) 하고 다른거임. 변환은 데미지가 나뉜후에 inc나 more를 각각 적용되는 잼이나 장비에 따라 변환후에 데미지가 증가되나 shift 는 그냥 나뉘는것.
+
+
+
+5) Damage mitigation : 회피 , 레지, 아머로 인한 물뎀 엔듀차지 등 적용
+* avoided  : https://pathofexile.gamepedia.com/Avoidance
+간단하게 hit 카운트가 됬지만 실제 데미지 0임.
+(이베이젼과 닷지랑 다름)  : 정확하지않음... 데미지를 받는게 멈춘다는데 흠..
+
+
+
+* elemental & chaos : 레지 적용
+
+
+* physical :  #% additional Physical Damage Reduction // 엔듀차지나 아머올려주는 플라스크 등 (최대90%)
+
+
+
+6) Damage taken 
+* ±# X Damage taken from Y
+ex)  -7 physical damage taken from attacks => 공격받을때 물뎀 -7감소
+
+
+
+* #% increased/reduced X Damage taken
+40% redused physical damage taken
+=> 물뎀 40% 감소. (합연산)
+
+
+
+* #% more/less X Damage taken
+40% less physical damage taken 
+=> 물뎀 40% 감소 (곱연산)
+
+
+
+7) Taking the final damage 
+* 논카뎀은 에쉴이 먼저 데미지 받음.
+
+
+* Mind over Matter (트리노드 -> 데미지 30% 마나로 받음) 적용- 해당노드 선택시
+
+1)번부터 7) 번까지 순서로 적용.
+
+
+-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 추가 : 도트뎀 (damage over time : DOT ) 은 이베이젼 ,데미지shifts , 아머 다 무시함. 
+damage taken or damage taken from damage over time 은 적용되나 damage taken from hits 는 적용안됨
+
+
+자료 출저 : https://cafe.naver.com/poekorea/87978
